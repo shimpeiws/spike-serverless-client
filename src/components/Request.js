@@ -20,7 +20,7 @@ export default () => {
       const data = {
         message: q
       };
-      axios.post('https:/dev-spike-serverless.high-pine.com/put-to-sqs', data);
+      axios.post(`${process.env.REACT_APP_PUT_TO_SQS_URL}`, data);
     });
     const r = await Promise.all(requests);
     console.info('r', r);
